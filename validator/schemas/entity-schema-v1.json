@@ -62,13 +62,30 @@
       ]
     }
   ],
-  "required": [
-    "domain",
-    "type",
-    "name",
-    "identifier"
+  "oneOf": [
+    {
+      "required": [
+        "domain",
+        "type",
+        "name",
+        "identifier"
+      ]
+    },
+    {
+      "required": [
+        "synthesize"
+      ]
+    }
   ],
   "properties": {
+    "synthesize": {
+      "$id": "#/properties/synthesize",
+      "type": "boolean",
+      "title": "Whether the entity should be synthesized",
+      "examples": [
+        false
+      ]
+    },
     "domain": {
       "$id": "#/properties/domain",
       "type": "string",
